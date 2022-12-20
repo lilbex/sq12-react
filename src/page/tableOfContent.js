@@ -29,6 +29,7 @@ const TableOfContentWrapper = styled.div`
     align-items: center;
     a {
       margin: 10px;
+      text-transform: uppercase;
     }
   }
   `;
