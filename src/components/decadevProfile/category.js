@@ -29,6 +29,7 @@ const Courses = () => {
 export default Courses;
 
 const TableStyle = styled.div`
+margin-top: 50px;
 table {
   border-collapse: collapse;
   width: 100%;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import "./style.css";
 import { Routes, Route } from "react-router-dom";
-import styled from "styled-components";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PracticeUseMemo from "./components/useMemo/useMemoHook";
@@ -36,7 +35,7 @@ function App() {
   // }, [number]);
 
   return (
-    <DivWrapper>
+    <div className="index">
       <ToastContainer />
       <Routes>
         <Route path="/" element={<LoginPage />} />
@@ -49,18 +48,9 @@ function App() {
         } />
         
       </Routes>
-    </DivWrapper>
+    </div>
   );
 }
 
-const DivWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  width: 100%;
-  div {
-    margin: 0 auto;
-  }
-`;
 
 export default App;

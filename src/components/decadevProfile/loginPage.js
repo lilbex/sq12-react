@@ -74,6 +74,8 @@ const FormWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
   form {
     width: 400px;
     padding: 50px;
