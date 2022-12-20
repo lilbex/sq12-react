@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-function Button({title, onClick, backgroundColor, white, blue, green}) {
+function Button({title, onClick, backgroundColor, white, blue, green, type}) {
 
   return (
-    <ButtonStyle white={white} blue={blue} green={green} backgroundColor={backgroundColor} onClick={onClick} >
+    <ButtonStyle type={type} white={white} blue={blue} green={green} backgroundColor={backgroundColor} onClick={onClick} >
       {title}
     </ButtonStyle>
   );

@@ -1,46 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "./style.css";
-import Button from "./components/Button";
-import Input from "./components/input";
+import { Routes, Route } from "react-router-dom";
 import styled from "styled-components";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import PracticeUseMemo from "./components/useMemo/useMemoHook";
+import DecadevProfile from "./components/decadevProfile";
+import Category from "./components/decadevProfile/category";
+import LoginPage from "./components/decadevProfile/loginPage";
+import ProtectedRoute from "./utils/protectedRoute";
 
 function App() {
-  const [number, setNumber] = useState(0);
-  const onChangeHandler = (e, n) => {
-    console.log(n);
-    const { name, value } = e.target;
-  };
+  // const [number, setNumber] = useState(0);
+  // const onChangeHandler = (e, n) => {
+  //   console.log(n);
+  //   const { name, value } = e.target;
+  // };
 
-  const increment = () => {
-    setNumber(number + 1);
-  };
+  // const increment = () => {
+  //   setNumber(number + 1);
+  // };
 
-  const decrement = () => {
-    if (number === 0) {
-      toast.error("Number cannot be less than 0");
-      return;
-    }
-    setNumber(number - 1);
-  };
+  // const decrement = () => {
+  //   if (number === 0) {
+  //     toast.error("Number cannot be less than 0");
+  //     return;
+  //   }
+  //   setNumber(number - 1);
+  // };
+
+  // const notify = () => toast("Wow so easy !");
+
+  // useEffect(() => {
+  //   notify();
+  // }, [number]);
 
   return (
-    <div className="center">
-       <ToastContainer />
-      <DivWrapper>
-        <Button title="decrement" onClick={decrement} />
-        <h2>{number}</h2>
-        <Button title="Increment" onClick={increment} />
-      </DivWrapper>
-    </div>
+    <DivWrapper>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/signup" element={<DecadevProfile />} />
+        <Route path="/useMemo" element={<PracticeUseMemo />} />
+        <Route path="/category" element={
+          <ProtectedRoute>
+            <Category />
+          </ProtectedRoute>
+        } />
+        
+      </Routes>
+    </DivWrapper>
   );
 }
 
 const DivWrapper = styled.div`
   display: flex;
-  width: 50%;
-  gap: 10px;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  div {
+    margin: 0 auto;
+  }
 `;
 
 export default App;
