@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import styled from "styled-components";
 
 export default function PracticeUseMemo() {
   const [number, setNumber] = useState(0);
@@ -15,7 +16,7 @@ export default function PracticeUseMemo() {
   };
 
   return (
-    <div>
+    <InputWrapper>
       <input
         type="number"
         value={number}
@@ -25,7 +26,7 @@ export default function PracticeUseMemo() {
         Toggle Theme
       </button>
       <div style={themeStyles}>{doubleNumber}</div>
-    </div>
+    </InputWrapper>
   );
 }
 
@@ -33,3 +34,7 @@ function slowFunction(num) {
   for (let i = 0; i <= 1000000000; i++) {}
   return num * 2;
 }
+
+const InputWrapper = styled.div`
+margin-top: 20px;
+`;

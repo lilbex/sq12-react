@@ -154,7 +154,7 @@ export default function Index() {
           <Button type="submit" title="Submit" />
         </div>
         <p>
-          Already have an acount? Login <Link to="/">here</Link>
+          Already have an acount? Login <Link to="/login">here</Link>
         </p>
       </form>
     </FormWrapper>

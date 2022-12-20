@@ -8,6 +8,7 @@ import DecadevProfile from "./components/decadevProfile";
 import Category from "./components/decadevProfile/category";
 import LoginPage from "./components/decadevProfile/loginPage";
 import ProtectedRoute from "./utils/protectedRoute";
+import TableOfContent from "./page/tableOfContent";
 
 function App() {
   // const [number, setNumber] = useState(0);
@@ -38,19 +39,21 @@ function App() {
     <div className="index">
       <ToastContainer />
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<DecadevProfile />} />
         <Route path="/useMemo" element={<PracticeUseMemo />} />
-        <Route path="/category" element={
-          <ProtectedRoute>
-            <Category />
-          </ProtectedRoute>
-        } />
-        
+        <Route
+          path="/category"
+          element={
+            <ProtectedRoute>
+              <Category />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/" element={<TableOfContent />} />
       </Routes>
     </div>
   );
 }
-
 
 export default App;
