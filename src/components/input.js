@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Input({ placeholder, onChange, value, type, name }) {
+function Input({ placeholder, onChange, value, type, name, ref }) {
   return (
     <InputWrapper>
       <input
@@ -10,6 +10,7 @@ function Input({ placeholder, onChange, value, type, name }) {
         value={value}
         type={type}
         name={name}
+        ref = {ref}
       />
     </InputWrapper>
   );

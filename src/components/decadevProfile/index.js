@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef, useEffect} from "react";
 import styled from "styled-components";
 import Input from "../input";
 import * as Yup from "yup";
@@ -45,6 +45,11 @@ export default function Index() {
     password: "",
     confirmPassword: "",
   };
+  const inputRef = useRef(null);
+  
+ const myRef = () => inputRef.current.value = "Hello";
+
+  
 
   const onSubmit = (values) => {
     console.log(values);
@@ -71,6 +76,7 @@ export default function Index() {
             placeholder="First Name"
             onChange={formik.handleChange}
             value={formik.values.firstName}
+            ref = {inputRef}
           />
           {formik.errors.firstName && formik.touched.firstName ? (
             <div className="error">{formik.errors.firstName}</div>

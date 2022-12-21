@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-function Button({title, onClick, backgroundColor, white, blue, green, type}) {
+function Button({title, onClick, backgroundColor, white, blue, green, type, height}) {
 
   return (
-    <ButtonStyle type={type} white={white} blue={blue} green={green} backgroundColor={backgroundColor} onClick={onClick} >
+    <ButtonStyle height={height} type={type} white={white} blue={blue} green={green} backgroundColor={backgroundColor} onClick={onClick} >
       {title}
     </ButtonStyle>
   );
@@ -20,4 +20,5 @@ const ButtonStyle = styled.button`
   text-align: center;
   text-decoration: none;
   width: 100%;
+  height: ${({height}) => height || "50px"};
 `;
