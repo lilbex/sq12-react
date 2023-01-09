@@ -12,34 +12,13 @@ import TableOfContent from "./page/tableOfContent";
 import { ContextStore } from "./context/contextStore";
 import Componenet1 from "./components/useContext/Component1";
 import Component2 from "./components/useContext/Component2";
-
+import ParentComponent from "./components/useCallBack/parentComponent";
+import PracticeUseCallBack from "./components/useCallBack/practiceUseCallBack";
+import PracticeUseRef from "./components/useRef/PracticeUseRef";
+import PracticeUseRef2 from "./components/useRef/practiceUseRefTable";
 function App() {
   const [user, setUser] = useState("Janet Joe");
   const [number, setNumber] = useState(12);
-
-  // const [number, setNumber] = useState(0);
-  // const onChangeHandler = (e, n) => {
-  //   console.log(n);
-  //   const { name, value } = e.target;
-  // };
-
-  // const increment = () => {
-  //   setNumber(number + 1);
-  // };
-
-  // const decrement = () => {
-  //   if (number === 0) {
-  //     toast.error("Number cannot be less than 0");
-  //     return;
-  //   }
-  //   setNumber(number - 1);
-  // };
-
-  // const notify = () => toast("Wow so easy !");
-
-  // useEffect(() => {
-  //   notify();
-  // }, [number]);
 
   return (
     <ContextStore.Provider value={{user, setUser, number}}>
@@ -49,6 +28,10 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<DecadevProfile />} />
           <Route path="/useMemo" element={<PracticeUseMemo />} />
+          <Route path="/useCallback" element={<ParentComponent />} />
+          <Route path="/useCallback2" element={<PracticeUseCallBack />} />
+          <Route path="/useRef" element={<PracticeUseRef />} />
+          <Route path="/usereftable" element={<PracticeUseRef2 />} />
           <Route
             path="/category"
             element={

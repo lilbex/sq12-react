@@ -13,6 +13,12 @@ function TableOfContent() {
       <Link to="/protected">Protected</Link>
       <Link to="/">Table Of Content</Link>
       <Link to="/styled-component">styled component</Link>
+      <Link to="/useCallback">useCallback</Link>
+      <Link to="/useCallback2">useCallback2</Link>
+      <Link to="/useRef">useRef</Link>
+      <Link to="/usereftable">useRefTable</Link>
+      <Link to="/component1">useContext1</Link>
+      <Link to="/component2">useContext2</Link>
     </div>
     </TableOfContentWrapper>
   );

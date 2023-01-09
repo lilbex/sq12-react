@@ -9,3 +9,5 @@ const Component3 = ({user}) => {
 }
 
 export default Component3;
+
+
