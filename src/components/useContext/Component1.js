@@ -1,7 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { ContextStore } from "../../context/contextStore";
 import Button from "../Button";
-import styled from "styled-components";
 
 const Componenet1 = () => {
   const { user, setUser, number } = useContext(ContextStore);

@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { Routes, Route } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PracticeUseMemo from "./components/useMemo/useMemoHook";
 import DecadevProfile from "./components/decadevProfile";
@@ -16,12 +16,14 @@ import ParentComponent from "./components/useCallBack/parentComponent";
 import PracticeUseCallBack from "./components/useCallBack/practiceUseCallBack";
 import PracticeUseRef from "./components/useRef/PracticeUseRef";
 import PracticeUseRef2 from "./components/useRef/practiceUseRefTable";
+import Todo from "./components/practiceRedux/todo";
+
 function App() {
   const [user, setUser] = useState("Janet Joe");
   const [number, setNumber] = useState(12);
 
   return (
-    <ContextStore.Provider value={{user, setUser, number}}>
+    <ContextStore.Provider value={{ user, setUser, number, setNumber }}>
       <div className="index">
         <ToastContainer />
         <Routes>
@@ -32,6 +34,7 @@ function App() {
           <Route path="/useCallback2" element={<PracticeUseCallBack />} />
           <Route path="/useRef" element={<PracticeUseRef />} />
           <Route path="/usereftable" element={<PracticeUseRef2 />} />
+          <Route path="/todo" element={<Todo />} />
           <Route
             path="/category"
             element={

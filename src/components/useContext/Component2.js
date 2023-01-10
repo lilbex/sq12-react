@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import Componenet1 from "./Component1";
 import { ContextStore } from "../../context/contextStore";
 
 const Component2 = () => {
-    const { user, setUser } = useContext(ContextStore);
+    const { user } = useContext(ContextStore);
   return (
     <div>
       {user}

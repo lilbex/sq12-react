@@ -1,4 +1,4 @@
-import React,{useRef, useEffect} from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import Input from "../input";
 import * as Yup from "yup";
@@ -30,7 +30,7 @@ const validationSchema = Yup.object({
       passwordRegex,
       "Password must contain at least 8 characters, 1 uppercase letter and 1 number"
     ),
-    confirmPassword: Yup.string()
+  confirmPassword: Yup.string()
     .required("Confirm Password is required")
     .oneOf([Yup.ref("password"), null], "Passwords must match"),
 });
@@ -46,10 +46,6 @@ export default function Index() {
     confirmPassword: "",
   };
   const inputRef = useRef(null);
-  
- const myRef = () => inputRef.current.value = "Hello";
-
-  
 
   const onSubmit = (values) => {
     console.log(values);
@@ -76,7 +72,7 @@ export default function Index() {
             placeholder="First Name"
             onChange={formik.handleChange}
             value={formik.values.firstName}
-            ref = {inputRef}
+            ref={inputRef}
           />
           {formik.errors.firstName && formik.touched.firstName ? (
             <div className="error">{formik.errors.firstName}</div>
@@ -156,7 +152,7 @@ export default function Index() {
           ) : null}
         </div>
 
-        <div style={{marginTop:"30px"}} >
+        <div style={{ marginTop: "30px" }}>
           <Button type="submit" title="Submit" />
         </div>
         <p>
