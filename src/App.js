@@ -17,6 +17,8 @@ import PracticeUseCallBack from "./components/useCallBack/practiceUseCallBack";
 import PracticeUseRef from "./components/useRef/PracticeUseRef";
 import PracticeUseRef2 from "./components/useRef/practiceUseRefTable";
 import Todo from "./components/practiceRedux/todo";
+import FindUser from "./components/gitHub/FindUser";
+import MovieList from "./components/movies/MovieList";
 
 function App() {
   const [user, setUser] = useState("Janet Joe");
@@ -35,6 +37,8 @@ function App() {
           <Route path="/useRef" element={<PracticeUseRef />} />
           <Route path="/usereftable" element={<PracticeUseRef2 />} />
           <Route path="/todo" element={<Todo />} />
+          <Route path="/github" element={<FindUser />} />
+          <Route path="/movies" element={<MovieList />} />
           <Route
             path="/category"
             element={
