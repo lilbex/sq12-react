@@ -9,3 +9,11 @@
   border: 1px solid #e5e5e5;
   border-radius: 10px;
 }
+.pop-item {
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+.pop-item:hover {
+  font-size: 16px;
+
+}

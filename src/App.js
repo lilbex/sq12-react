@@ -19,6 +19,7 @@ import PracticeUseRef2 from "./components/useRef/practiceUseRefTable";
 import Todo from "./components/practiceRedux/todo";
 import FindUser from "./components/gitHub/FindUser";
 import MovieList from "./components/movies/MovieList";
+import DarkLightMode from "./components/dark-light-mode/darkLightMode";
 
 function App() {
   const [user, setUser] = useState("Janet Joe");
@@ -39,6 +40,7 @@ function App() {
           <Route path="/todo" element={<Todo />} />
           <Route path="/github" element={<FindUser />} />
           <Route path="/movies" element={<MovieList />} />
+          <Route path="/darklightmode" element={<DarkLightMode />} />
           <Route
             path="/category"
             element={
