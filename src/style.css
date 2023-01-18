@@ -9,3 +9,10 @@
   display: flex;
   justify-content: center;
 }
+
+.cancel {
+  background-color: blue;
+}
+.confirm {
+  background-color: red;
+}

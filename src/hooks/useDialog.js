@@ -2,10 +2,10 @@ import swal from "sweetalert";
 import { toast } from "react-toastify";
 
 export default function useDialog() {
-  const deleteItem = (handleDelete, id) => {
+  const deleteItem = (handleDelete, id, name) => {
     swal({
       title: "Are you sure",
-      text: `You want to delete? process cannot be reversed`,
+      text: `You want to delete ${name}`,
       icon: "warning",
       buttons: {
         none: {
@@ -39,8 +39,7 @@ export default function useDialog() {
       }
     });
   };
-  
   return {
-    deleteItem
+    deleteItem,
   };
 }

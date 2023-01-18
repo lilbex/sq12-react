@@ -4,6 +4,8 @@ import fetchTodoAction from "../../redux/action/fetchTodoAction";
 import Modal from "../modalComponents/Modal";
 import "./popup.css"
 import  Pagination from "./pagination";
+import useDialog from "../../hooks/useDialog";
+import axios from "axios";
 
 const Todo = () => {
   const todo = useSelector((state) => state.todo.data);
@@ -24,6 +26,8 @@ const Todo = () => {
       setCurrentPage(currentPage - 1);
     }
   };
+
+
 
   const handleNextClick = () => {
     if(currentPage < totalPages) {
@@ -57,6 +61,17 @@ const Todo = () => {
     return (currentPage - 1) * todosPerPage + 1;
   }
 
+  const deleteTodo = async(id) => {
+    try{
+      await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+
+  const { deleteItem } = useDialog();
+
   return (
     <div>
       <table>
@@ -68,7 +83,7 @@ const Todo = () => {
           <th>Action</th>
         </tr>
         {currentTodos && currentTodos.length > 0 ? (
-          currentTodos.map(({ userId, title, completed }, index) => (
+          currentTodos.map(({ id, userId, title, completed }, index) => (
             <tr key={index}>
               <td>{serialNum() + index}</td>
               <td>{userId}</td>
@@ -84,7 +99,9 @@ const Todo = () => {
                     <span className="pop" ref={popupRef}>
                       <p className="pop-item" >View user</p>
                       <p className="pop-item" onClick={() => setEditModal(true)}>Edit user</p>
-                      <p className="pop-item">Delete user</p>
+                      <p className="pop-item" 
+                        onClick ={()=>deleteItem(deleteTodo, id, "Elias")}
+                       >Delete user</p>
                     </span>
                   </Fragment>
                 )}
